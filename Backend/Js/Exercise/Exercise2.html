@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise2</title>
+    <style>
+        body {
+            font: normal 18pt arial;
+        }
+
+        input {
+            width: 200px;
+            height: 25px;
+        }
+
+        input[type=button] {
+            font: normal 13pt arial;
+            width: 175px;
+            height: 30px;
+        }
+
+        div#resultado {
+            margin-top: 35px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Maior número</h1>
+    <input type="number" name="valor" id="numero">
+    <input type="number" name="valor2" id="numero2">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="resultado">resultado</div>
+
+    <script>
+        function verificar() {
+            const texto1 = document.getElementById('numero')
+            const texto2 = document.getElementById('numero2')
+            const numero1 = Number(texto1.value)
+            const numero2 = Number(texto2.value)
+            const res = document.getElementById('resultado')
+
+            if (numero1 > numero2) {
+                res.innerHTML = `O numero ${numero1} é maior número que o ${numero2}`
+            }
+
+            else if (numero1 === numero2) {
+                res.innerHTML = `O numero ${numero1} é igual ao ${numero2}`
+            }
+
+            else if (numero1 < numero2) { 
+                res.innerHTML = `O numero ${numero2} é maior número que o ${numero1}`
+            }
+            
+        }
+    </script>
+</body>
+</html>

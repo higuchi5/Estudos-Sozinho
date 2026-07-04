@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1</title>
+</head>
+<body>
+<h1>Calcule a idade</h1>
+    <input type="number" name="ano" id="nascimento">
+    <input type="button" value="verificar" onclick="calcularIdade()">
+    <div id="resultado">resultado</div>
+
+    <script>
+      function calcularIdade() {
+        const ano = document.getElementById('nascimento')
+        const nascimento = Number(ano.value)
+        const subidade = 2026 - nascimento
+        const res = document.getElementById('resultado')
+
+        if (subidade <= 12) {
+          res.innerHTML = `Sua idade é ${subidade}. Você é criança`
+          }
+          else if (subidade <= 17) {
+            res.innerHTML = `Sua idade é ${subidade}. Você é adolescente`
+            }
+            else if (subidade <= 59) {
+            res.innerHTML = `Sua idade é ${subidade}. Você é adulto`
+            }
+              else {
+              res.innerHTML = `Sua idade é ${subidade}. Você é idoso`
+              }
+      }
+    </script>
+</body>
+</html>
