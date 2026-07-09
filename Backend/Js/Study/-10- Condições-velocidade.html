@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de velocidade </title>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    Velocidade do carro: <input type="number" name="velocidade" id="velocidade"> Km/h
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="resultado"></div>
+
+    <script>
+
+        function calcular() {
+            const velocidade = document.querySelector("#velocidade");
+            const resultado = document.querySelector("#resultado");
+            const velo = Number(velocidade.value);
+            resultado.innerHTML = `Sua velocidade atual é de ${velo} Km/h`;
+
+            if (velo > 60) {
+                resultado.innerHTML += `<br>Você ultrapassou a velocidade permitida. MULTADO!<br>`;
+            }
+            
+            resultado.innerHTML += `Dirija sempre com cinto de segurança`;
+        }
+    </script>
+</body>
+</html>
